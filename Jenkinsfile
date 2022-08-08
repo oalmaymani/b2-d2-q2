@@ -48,14 +48,7 @@ pipeline {
                 sh "mvn package"
 
             }
-            stage('sonar scan'){
-            steps {
-              sh "mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=onsite-Osaid-B2D2 \
-  -Dsonar.host.url=http://52.23.193.18 \
-  -Dsonar.login=sqp_fa20b130d209fef60ab3b0f4a5335d5a6abdaebc"
-            }
-        }
+            
 
             post {
                 success {
