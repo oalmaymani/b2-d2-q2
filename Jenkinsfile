@@ -1,12 +1,12 @@
 pipeline {
     agent any
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('class-jenkins-aws-secret-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('class-jenkins-aws-secret-access-key')
+        AWS_ACCESS_KEY_ID     = credentials('osaid-aws-secret-key-id ')
+        AWS_SECRET_ACCESS_KEY = credentials('osaid-aws-secret-access-key')
         ARTIFACT_NAME = 'hello-world.war'
-        AWS_S3_BUCKET = 'jenkins-storage-d3a1'
-        AWS_EB_APP_NAME = 'class-d3a1'
-        AWS_EB_ENVIRONMENT = 'Classd3a1-env'
+        AWS_S3_BUCKET = 'osaid-belt2d2-artifacts-123456'
+        AWS_EB_APP_NAME = 'osaid-Belt2D2-artifacts-123456'
+        AWS_EB_ENVIRONMENT = 'Osaidbelt2d2artifacts123456-env'
         AWS_EB_APP_VERSION = "${BUILD_ID}"
     } 
     stages {
