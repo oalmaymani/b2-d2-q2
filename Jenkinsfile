@@ -44,8 +44,7 @@ pipeline {
 
         stage('Quality Scan'){
             steps {
-                sh "
-                mvn clean verify sonar:sonar \
+                sh "mvn clean verify sonar:sonar \
                     -Dsonar.projectKey=onsite-Osaid-B2D2 \
                     -Dsonar.host.url=http://52.23.193.18 \
                     -Dsonar.login=sqp_3c902e613c3d5b082ce88824c31a278a8e7e1454
