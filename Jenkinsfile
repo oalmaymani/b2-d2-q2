@@ -4,13 +4,15 @@ pipeline {
     environment {
 
         AWS_ACCESS_KEY_ID     = credentials('osaid-aws-secret-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('osaid-aws-secret-access-key')
-        AWS_S3_BUCKET         = "osaid-belt2d2-artifacts-123456"
-        ARTIFACT_NAME         = "hello-world.jar"
-        AWS_EB_APP_NAME       = "osaid-Belt2D2-artifacts-123456"
-        AWS_EB_APP_VERSION    = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT     = "Osaidbelt2d2artifacts123456-env"
+        AWS_SECRET_ACCESS_KEY = credentials('	osaid-aws-secret-access-key.')
+        AWS_S3_BUCKET = "osaid-belt2d2-artifacts-123456"
+        ARTIFACT_NAME = "hello-world.jar"
+        AWS_EB_APP_NAME = "osaid-Belt2D2-artifacts-123456"
+        AWS_EB_APP_VERSION = "${BUILD_ID}"
+        AWS_EB_ENVIRONMENT = "Osaidbelt2d2artifacts123456-env"
 
+        SONAR_IP = "52.23.193.18"
+        SONAR_TOKEN = "sqp_3c902e613c3d5b082ce88824c31a278a8e7e1454"
 
     }
 
@@ -49,10 +51,12 @@ pipeline {
 
         stage('Quality Scan'){
             steps {
-                sh "mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=onsite-Osaid-B2D2 \
-  -Dsonar.host.url=http://52.23.193.18 \
-  -Dsonar.login=sqp_3c902e613c3d5b082ce88824c31a278a8e7e1454"
+                sh '''
+                mvn clean verify sonar:sonar \
+                    -Dsonar.projectKey=Online-cohort-project \
+                    -Dsonar.host.url=http://$SONAR_IP \
+                    -Dsonar.login=$SONAR_TOKEN
+                '''
             }
         }
 
