@@ -4,7 +4,7 @@ pipeline {
     environment {
 
         AWS_ACCESS_KEY_ID     = credentials('osaid-aws-secret-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('	osaid-aws-secret-access-key.')
+        AWS_SECRET_ACCESS_KEY = credentials('osaid-aws-secret-access-key.')
         AWS_S3_BUCKET = "osaid-belt2d2-artifacts-123456"
         ARTIFACT_NAME = "hello-world.jar"
         AWS_EB_APP_NAME = "osaid-Belt2D2-artifacts-123456"
