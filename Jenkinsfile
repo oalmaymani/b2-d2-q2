@@ -20,8 +20,8 @@ pipeline {
 
             sh "mvn clean verify sonar:sonar \
   -Dsonar.projectKey=onsite-Osaid-B2D2 \
-  -Dsonar.host.url=http://52.23.193.18 \
-  -Dsonar.login=sqp_8215f91480971e55fb7f4c66af82e8ce911a2879"
+  -Dsonar.host.url=http://34.207.184.173 \
+  -Dsonar.login=sqp_798a6b9f406fde7003b0c0f7cbaddebd76190a2b"
                
       
                
