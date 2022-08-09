@@ -33,7 +33,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/skag07/BeltExam2-day2-jenkins.git'
+                git 'https://github.com/oalmaymani/b2-d2-q2.git'
 
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true package"
